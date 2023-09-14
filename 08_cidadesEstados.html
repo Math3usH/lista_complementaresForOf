@@ -8,11 +8,58 @@
     */
 
     //Entrada
+    let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
+
+    let pr = [];
+    let sc = [];
+    let rs = [];
+    let numPr = 0;
+    let numSc = 0;
+    let numRs = 0;
+
 
 
     //Processamento
+    for(let item of cidades){
+        const estado = prompt(`A qual estado pertence a ${item}`).toLowerCase()
+        if(estado == "pr"){
+            pr.push(item)
+            numPr = numPr + 1
+        }
+        else if(estado == "sc"){
+            sc.push(item)
+            numSc = numSc + 1
+        }
+        else if(estado == "rs"){
+            rs.push(item)
+            numRs = numRs + 1
+        }
+    }
 
 
     //Saída
+    if(numRs > numSc && numRs > numPr){
+        if(numSc > numPr)
+        alert(`As cidades pertencentes ao RS são: ${rs.join(", ")} ${numRs} cidades \n As cidades pertencentes a SC são: ${sc.join(", ")} ${numSc} cidades \n As cidade pertencentes ao PR são: ${pr.join(", ")} ${numPr} cidades`)
+        else{
+          alert(`As cidades pertencentes ao RS são: ${rs.join(", ")} ${numRs} cidades \n As cidades pertencentes ao PR são: ${pr.join(", ")} ${numPr} cidades \n As cidade pertencentes a SC são: ${sc.join(", ")} ${numSc} cidades `)
+        }
+    }
+    else if(numSc > numPr && numSc > numRs){
+        if(numPr > numRs){
+            alert(`As cidades pertencentes a SC são: ${sc.join(", ")} ${numSc} cidades \n As cidades pertencentes ao PR são: ${pr.join(", ")} ${numPr} cidades \n As cidade pertencentes ao RS são: ${rs.join(", ")} ${numRs} cidades `)
+        }
+        else{
+            alert(`As cidades pertencentes a SC são: ${sc.join(", ")} ${numSc} cidades \n As cidades pertencentes ao RS são: ${rs.join(", ")} ${numRs} cidades \n As cidade pertencentes ao PR são: ${pr.join(", ")} ${numPr} cidades`)
+        }
+    }
+    else if(numPr > numSc && numPr ){
+        if(numSc > numRs){
+            alert(`As cidades pertencentes ao PR são: ${pr.join(", ")} ${numPr} cidades \n As cidades pertencentes a SC são: ${sc.join(", ")} ${numSc} cidades \n As cidade pertencentes ao RS são: ${rs.join(", ")} ${numRs} cidades `)
+        }
+        else{
+            alert(`As cidades pertencentes ao PR são: ${pr.join(", ")} ${numPr} cidades \n As cidades pertencentes ao PR são: ${pr.join(", ")} ${numPr} cidades \n As cidade pertencentes a SC são: ${sc.join(", ")} ${numSc} cidades`)
+        }
+    }
 
 </script>

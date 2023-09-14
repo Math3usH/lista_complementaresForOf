@@ -7,11 +7,26 @@
     */
 
     //Entrada
+    const notasAluno = [7, 5, 9, 8];
+    let maiorNota = [];
+    let menorNota = [];
+    let media = [];
+    let soma = 0;
+
 
 
     //Processamento
-
+    for (let item of notasAluno) {
+        if ( item > 8) {
+            maiorNota.push(item)
+        }
+        else if ( item < 6) {
+            menorNota.push(item)
+        }
+        soma = soma + item
+    }
 
     //Saída
+    alert(`A maior nota é ${maiorNota} \n a menor nota é ${menorNota} \n a media é ${(soma / 4).toFixed(2)} `)
 
 </script>

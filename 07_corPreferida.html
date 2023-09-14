@@ -8,11 +8,31 @@
     */
 
     //Entrada
+    let cores = ["Branca", "Azul", "Marrom", "Cinza", "Verde", "Amarelo", "Vermelho", "Preto"];
+
+    let corFavorita = [];
+    let naoGosta = [];
+    let numFav = 0;
+    let numNao = 0;
 
 
     //Processamento
+    for (let item of cores) {
+        const pergunta = prompt(`você gosta da cor ${item}?  S-sim, N-não`).toLowerCase()
+        if (pergunta == "s") {
+            corFavorita.push(item)
+            alert(`${corFavorita.join(", ")}`)
+            numFav = numFav + 1
+        }
+        else {
+            naoGosta.push(item)
+            alert(`${naoGosta.join(", ")}`)
+            numNao = numNao + 1
+        }
+    }
 
 
     //Saída
+    alert(`Suas cores favoritas são: ${corFavorita.join(", ")} \n O total de: ${numFav} \n E as cores que voce não gosta são: ${naoGosta.join(", ")} \n O total de: ${numNao}`)
 
 </script>
